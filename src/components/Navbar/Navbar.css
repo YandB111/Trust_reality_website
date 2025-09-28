@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  z-index: 1000;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Logo */
+.placeholder-logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 100%;
+  width: auto;
+  padding: unset;
+ padding-left: 40%;
+  margin-left: -120px;
+}
+
+
+.navbar-center {
+  display: flex;
+  gap: 50px;
+  margin-left: 10px;
+}
+.navbar-center a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+.navbar-center a:hover {
+  color: #ccc;
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+html {
+  scroll-behavior: smooth;
+}
+  .hidden-link {
+  display: none;
+}
+.hide-link {
+  display: none !important;
+}
+
+
+@media (max-width: 768px) {
+  .navbar-inner {
+    padding: 0 15px; /* reduce padding on small screens */
+  }
+
+  /* Smaller logo */
+  .logo {
+    height: 40%;
+    width: 60%;
+    margin-left: 0;
+    padding: 0%;
+  }
+
+  /* Show hamburger */
+  .menu-icon {
+    display: block;
+  }
+
+
+  /* Dropdown menu */
+  .navbar-center {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #111; /* slightly lighter black for contrast */
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 0;
+    border-top: 1px solid #333;
+  }
+
+  .navbar-center a {
+    font-size: 18px;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar-center.active {
+    display: flex;
+  }
+}

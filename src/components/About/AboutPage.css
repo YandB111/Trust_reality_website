@@ -1,0 +1,233 @@
+/* 🔹 Development Section */
+.developments-section {
+    margin-top: 60px;
+    position: relative;
+    /* so arrows can be placed relative to this */
+    padding: 100px;
+}
+
+.developments-header {
+    display: flex;
+    justify-content: flex-start;
+    /* align title to left */
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    color: #7a624a;
+}
+
+/* Title styling */
+.section-subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 5px 0 0;
+}
+
+.residential-section {
+    margin-top: 60px;
+    position: relative;
+    /* so arrows can be placed relative to this */
+    padding: 100px;
+}
+.residential-section {
+  margin-top: 60px;
+  padding: 50px;
+  position: relative;
+}
+
+.residential-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.residential-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+/* Residential label */
+.residential-label {
+  font-size: 22px;        /* smaller than main text */
+  font-weight: 600;
+  color: #7a624a;         /* brownish shade */
+  margin-right: 8px;
+}
+
+/* Skylines description */
+.residential-subtitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;            /* black */
+}
+
+
+/* 🔹 Cards */
+.development-card {
+    padding: 15px;
+    text-align: center;
+}
+
+.development-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.development-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.development-card p {
+    font-size: 14px;
+    color: #666;
+}
+.commercial-section {
+  margin-top: 60px;
+ 
+}
+
+.commercial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.commercial-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0;
+  
+  align-items: baseline;
+  gap: 8px; /* space between label and subtitle */
+}
+
+/* Commercial label (brown) */
+.commercial-label {
+  font-size: 24px; 
+  font-weight: 600;
+  color: #7a624a; /* brown shade */
+}
+
+/* Subtitle (smaller + black) */
+.commercial-subtitle {
+  font-size: 18px; /* smaller than label */
+  font-weight: 500;
+  color: #000;     /* black */
+}
+
+/* 🔹 Custom Slider Arrows */
+.custom-arrow {
+    position: absolute;
+    top: -10px;
+    /* place above cards, near title */
+    transform: none;
+    /* remove vertical centering */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.custom-arrow span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+.custom-arrow:hover {
+    background: #000;
+    border-color: #000;
+}
+
+.custom-arrow:hover span {
+    color: #fff;
+}
+
+/* Align both arrows top-left */
+.custom-arrow.prev {
+    left: 0;
+    /* stick to left */
+}
+
+.custom-arrow.next {
+    left: 50px;
+    /* place next arrow beside prev */
+}
+/* 🔹 Responsive Fixes */
+@media (max-width: 768px) {
+    /* Arrows */
+    .custom-arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .custom-arrow span {
+        font-size: 14px;
+    }
+
+    .custom-arrow.next {
+        left: 40px;
+    }
+
+    /* Sections */
+    .developments-section,
+    .residential-section,
+    .commercial-section {
+        margin-top: 40px;
+        position: relative;
+        padding: 0px; /* reduce padding for small screens */
+    }
+
+    /* Titles */
+    .section-title,
+    .residential-title,
+    .commercial-title {
+        font-size: 22px;
+        flex-wrap: wrap; /* break into new lines if too long */
+    }
+
+    /* Subtitles + Labels */
+    .section-subtitle,
+    .residential-label,
+    .commercial-label {
+        font-size: 16px;
+    }
+
+    .residential-subtitle,
+    .commercial-subtitle {
+        font-size: 14px;
+    }
+
+    /* Cards */
+    .development-card {
+        padding: 10px;
+    }
+
+    .development-card h3 {
+        font-size: 16px;
+    }
+
+    .development-card p {
+        font-size: 12px;
+    }
+}

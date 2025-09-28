@@ -1,0 +1,46 @@
+/* src/components/Footer/Footer.css */
+.footer {
+  background-color: #1d1a16;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-reach-us h3 {
+  color: #c89b3c;
+  margin-bottom: 20px;
+}
+
+.footer-reach-us p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.footer-reach-us a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-reach-us a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #c89b3c;
+}

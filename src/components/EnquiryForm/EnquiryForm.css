@@ -1,0 +1,154 @@
+/* Overlay behind the modal - FULLSCREEN and on top */
+.enquiry-overlay {
+  position: fixed;         /* Fixed to viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;            /* Full viewport width */
+  height: 100vh;           /* Full viewport height */
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-end; /* Align modal to the right */
+  z-index: 100000;         /* VERY high z-index to be on top */
+}
+
+/* Enquiry Modal (right slide panel) */
+.enquiry-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 320px;        /* Thinner modal */
+  height: 100vh;           /* Full height */
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  z-index: 100001;         /* Higher than overlay */
+  position: relative;      /* relative to overlay */
+}
+
+/* Content inside modal */
+.enquiry-content {
+  position: relative;
+  padding: 20px 12px 32px;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  height: 100%;
+}
+
+/* Close button, fixed inside modal */
+.close-btn {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  font-size: 28px !important;
+  background: none !important;
+  border: none !important;
+  color: black !important;
+  cursor: pointer !important;
+  z-index: 100002 !important; /* Above modal */
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+/* Title */
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  background: transparent;
+  color: #000;
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border-bottom-color: #000;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%23000' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 10px;
+  padding-right: 24px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Sticky Enquire Button on side */
+.enquire-btn {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+  background: #8c6a3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  z-index: 99999; /* below modal overlay */
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .enquiry-modal {
+    max-width: 280px;
+  }
+
+  .enquiry-content {
+    padding: 16px 10px 28px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  button[type="submit"] {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
