@@ -28,6 +28,8 @@
 .latest-slide img {
   width: 50%;
   object-fit: cover;
+
+  height:400px;
 }
 
 .latest-slide-info {
@@ -92,7 +94,10 @@
     flex-direction: column;
   }
   .latest-slide img {
-    width: 100%;
+    width: 80%;
+     object-fit: cover;
+  height:40%;
+  margin-left: 10%;
   }
   .latest-slide-info {
     width: 100%;

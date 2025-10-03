@@ -13,6 +13,7 @@ import Testimonial from './components/TestimonialVideo/Testimonial';
 import Footer from './components/Footer/Footer';
 import Residential from './components/Residential/Residential';
 import Commercial from './components/Commercial/Commercial';
+import Brands from './components/Brands/Brands';
 
 function Home() {
   return (
@@ -26,7 +27,7 @@ function Home() {
      
       <LatestSliderProject/>
       <Testimonial/>
-      
+      <Brands/>
       <Footer/>
     </>
     

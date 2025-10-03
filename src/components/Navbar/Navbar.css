@@ -45,6 +45,26 @@ body {
   margin-left: -120px;
 }
 
+.text-logo {
+  font-family: 'Arial', sans-serif; /* Use any font you like */
+  font-weight: bold;
+  font-size: 45px; /* Adjust size as needed */
+   text-decoration: none;  /* This removes the underline */
+  cursor: pointer;
+}
+
+.text-logo span {
+  color: #00008B; /* Purple for REALTY, like in the image */
+}
+
+.text-logo {
+  color: #00008B; /* Dark blue for TRUST, like in the image */
+}
+
+/* Optional: adjust spacing */
+.text-logo span {
+  margin-left: 0px;
+}
 
 .navbar-center {
   display: flex;
@@ -97,6 +117,14 @@ html {
   .menu-icon {
     display: block;
   }
+
+  .text-logo {
+  font-family: 'Arial', sans-serif; /* Use any font you like */
+  font-weight: bold;
+  font-size: 20px; /* Adjust size as needed */
+   text-decoration: none;  /* This removes the underline */
+  cursor: pointer;
+}
 
 
   /* Dropdown menu */

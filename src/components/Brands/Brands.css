@@ -1,0 +1,50 @@
+/* Brands.css */
+
+.brands-container {
+  overflow: hidden;
+  width: 100%;
+  background-color: #fff;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.brands-container h2 {
+  margin-bottom: 1.5rem;
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 3rem;
+  animation: scroll-left 30s linear infinite;
+  width: max-content;
+}
+
+.brand-card {
+  flex: 0 0 auto;
+  width: 120px;
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.brand-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
