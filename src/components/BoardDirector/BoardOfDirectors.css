@@ -1,4 +1,56 @@
 /* Board of Directors Container */
+/* Lightbox Overlay */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* higher than navbar */
+}
+
+/* Lightbox Content */
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* ✅ Renamed Close Button */
+/* ✅ Fixed Close Button */
+.lightbox-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #fff;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+  z-index: 2100; /* make sure above everything inside lightbox */
+}
+
+
+.lightbox-close-btn:hover {
+  background: #ff4d4d;
+  color: #fff;
+}
+
 .board-of-directors {
   text-align: center;
   margin: 2rem auto;
@@ -52,16 +104,26 @@
 }
 
 /* Image Wrapper */
+/* Image Wrapper */
 .image-wrapper {
   position: relative;
   z-index: 1;
   overflow: hidden;
   border-radius: 6px;
+
+  /* ✅ fixed size for all cards */
+  width: 100%;
+  height: 400px; /* adjust height as you like */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9; /* fallback background */
 }
 
 .image-wrapper img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* ✅ ensures all images fill same size */
   display: block;
   transition: filter 0.4s ease;
 }

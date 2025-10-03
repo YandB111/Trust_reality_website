@@ -1,57 +1,60 @@
 import React, { useState, useEffect } from "react";
 import "./BoardOfDirectors.css";
-import DirectorImg from "../../assets/director/Director.jpg";
+import Rbs from "../../assets/director/Rbs.png";
+import tro1 from "../../assets/director/TrustRealityOffice1.png";
+import tro2 from "../../assets/director/TrustRealityOffice2.png";
+import Rec1 from "../../assets/director/RecCert1.png";
+import Rec2 from "../../assets/director/RecCert2.png";
+import Rec3 from "../../assets/director/RecCert3.png";
+import RealEstateAuthority from "../../assets/director/RealEstateAuthority.png";
+import urc1 from "../../assets/director/urc1.png";
+import urc2 from "../../assets/director/urc2.png";
+import Hrap1 from "../../assets/director/Hrap1.png";
+import Hrap2 from "../../assets/director/Hrap2.png";
+import Hrap3 from "../../assets/director/Hrap3.png";
 
 const directors = [
-  {
-    name: "Irfan Razack",
-    role: "Chairman & Managing Director",
-    img: DirectorImg,
-  },
-  {
-    name: "Rezwan Razack",
-    role: "Joint Managing Director",
-    img: "/images/rezwan.jpg",
-  },
-  {
-    name: "Noaman Razack",
-    role: "Whole-Time Director",
-    img: "/images/noaman.jpg",
-  },
-  { name: "New Director", role: "Director", img: "/images/new-director.jpg" },
-  { name: "Another Director", role: "Director", img: "/images/another.jpg" },
+  { name: "Registration Certification", role: "Trust Reality", img: Rbs },
+  { name: "Trust Reality Office", role: "Panchkula, Haryana", img: tro1 },
+  { name: "Trust Reality Office", role: "Panchkula, Haryana", img: tro2 },
+  { name: "Registration Certificate 1", role: "Trust Reality", img: Rec1 },
+  { name: "Registration Certificate 2", role: "Trust Reality", img: Rec2 },
+  { name: "Registration Certificate 3", role: "Trust Reality", img: Rec3 },
+  { name: " ", role: "", img: RealEstateAuthority },
+  { name: "Udyam Registration 1", role: "Certificate", img: urc1 },
+  { name: "Udyam Registration 2", role: "Certificate", img: urc2 },
+  { name: "HERAP 1", role: "Certificate", img: Hrap1 },
+  { name: "HERAP 2", role: "Certificate", img: Hrap2 },
+  { name: "HERAP 3", role: "Certificate", img: Hrap3 },
 ];
 
 const BoardOfDirectors = () => {
   const [index, setIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
 
-  // ✅ Adjust items per page based on screen size
+  // Adjust items per page for responsive layout
   useEffect(() => {
     const updateItemsPerPage = () => {
-      setItemsPerPage(window.innerWidth <= 768 ? 1 : 3);
+      setItemsPerPage(window.innerWidth <= 760 ? 1 : 3);
     };
     updateItemsPerPage();
     window.addEventListener("resize", updateItemsPerPage);
     return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
+  // Circular slider navigation
   const prevSlide = () => {
-    setIndex((prev) =>
-      prev === 0 ? directors.length - itemsPerPage : prev - 1
-    );
+    setIndex((prev) => (prev === 0 ? directors.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setIndex((prev) =>
-      prev >= directors.length - itemsPerPage ? 0 : prev + 1
-    );
+    setIndex((prev) => (prev === directors.length - 1 ? 0 : prev + 1));
   };
 
   return (
     <div className="board-of-directors">
       <h2>
-        Board of <span>Directors</span>
+        All Approved <span>Certifications</span>
       </h2>
 
       <div className="slider-wrapper">
@@ -63,7 +66,7 @@ const BoardOfDirectors = () => {
           className="directors-track"
           style={{
             transform: `translateX(-${(index * 100) / itemsPerPage}%)`,
-            transition: "transform 0.6s ease-in-out",
+            transition: "transform 0.5s ease-in-out",
           }}
         >
           {directors.map((director, i) => (

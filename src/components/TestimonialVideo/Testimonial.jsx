@@ -14,13 +14,14 @@ const Testimonial = () => {
             <h2>Customer Assurance Banner</h2>
             <p>
               Why Trust Realty is Your Best Choice:
-              
-              {" "}
-              <strong>✔ 10+ Years of Experience
-              ✔ 100% RERA-Compliant Properties
-              ✔ Strong Builder Partnerships (DLF, Godrej & more)
-              ✔ Transparent Deals – No Hidden Charges
-              ✔ Dedicated Post-Sale Support.</strong>.
+              <br />
+              <strong>
+                ✔ 10+ Years of Experience <br />
+                ✔ 100% RERA-Compliant Properties <br />
+                ✔ Strong Builder Partnerships (DLF, Godrej & more) <br />
+                ✔ Transparent Deals – No Hidden Charges <br />
+                ✔ Dedicated Post-Sale Support.
+              </strong>
             </p>
             <p className="closing-text">
               “Choosing Trust Realty means choosing honesty, security & profitable investments.”
@@ -43,15 +44,15 @@ const Testimonial = () => {
           >
             ✖
           </button>
-          <iframe
+          <video
             width="100%"
             height="500"
-            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"
-            title="Customer Testimonial"
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          ></iframe>
+            controls
+            autoPlay
+          >
+            <source src="/Testonomial/Testonomial.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       )}
     </div>
