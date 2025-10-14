@@ -1,39 +1,34 @@
 /* === Slider Container === */
 .slider {
   position: relative;
-  width: 100vw;                  /* Full width viewport */
-  left: 50%;
-  margin-left: -50vw;            /* Center align full-width container */
-  aspect-ratio: 16 / 9;          /* Maintains perfect 16:9 ratio */
+  width: 100%;
+  height: 85vh;            /* balanced, not overly tall */
   overflow: hidden;
-  background-color: #000;        /* Fallback background */
-  margin-top: 4%;                /* ✅ Keep same top spacing */
-  object-fit: cover;   /* fills screen, crops edges */
-
+  background-color: #000;
+  margin-top: 4%;
 }
+
 
 /* === Slider Track === */
 .slider-track {
   display: flex;
   height: 100%;
   transition: transform 0.8s ease-in-out;
+  width: 100%;
 }
 
 /* === Each Slide === */
-.slide {
-  flex: 0 0 auto;
-  height: 100%;
-}
 
+
+/* === Slide Images === */
 .slide-img {
   width: 100%;
   height: 100%;
-  object-fit: contain;            /* Keeps full image visible, no crop */
-  background-color: #000;         /* Fills empty space with black */
-  display: inline-flex;
-  object-fit: cover;   /* fills screen, crops edges */
-
+  object-fit: cover;        /* fills space nicely */
+  object-position: center;  /* centers image properly */
+  display: block;
 }
+/* === Navigation Arrows === */
 
 /* === Navigation Arrows === */
 .arrow {
@@ -47,28 +42,32 @@
   cursor: pointer;
   padding: 10px 14px;
   border-radius: 50%;
-  z-index: 2;
+  z-index: 5; /* ✅ keeps arrows clickable over everything */
   transition: background 0.3s ease, transform 0.2s ease;
+  pointer-events: auto; /* ensure they accept clicks */
 }
 
 .arrow:hover {
   background: rgba(0, 0, 0, 0.7);
-  transform: translateY(-50%) scale(1.05);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .arrow.left {
-  left: 20px;
+  left: 10px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent);
 }
 
 .arrow.right {
-  right: 20px;
+  right: 10px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.6), transparent);
 }
+
+
 
 /* === Responsive Adjustments === */
 @media (max-width: 1024px) {
   .slider {
-    aspect-ratio: 16 / 9;
-    margin-top: 4%;
+    height: 70vh;               /* Slightly smaller height for laptop screens */
   }
 
   .arrow {
@@ -79,20 +78,11 @@
 
 @media (max-width: 768px) {
   .slider {
-    aspect-ratio: 16 / 9;
+    height: 60vh;               /* Adjust for mobile */
     margin-top: 4%;
-    
   }
 
-  /* Hide arrows on touch devices for cleaner UI */
   .arrow {
     display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .slider {
-    aspect-ratio: 16 / 9;
-    margin-top: 4%;
   }
 }

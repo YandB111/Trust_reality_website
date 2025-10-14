@@ -116,7 +116,7 @@
   position: fixed;
   top: 50%;
   right: 0;
-  transform: translateY(-50%);
+  transform: translateY(60%);
   writing-mode: vertical-rl;
   padding: 0.8rem 1rem;
   font-weight: 600;
@@ -126,7 +126,9 @@
   border-radius: 5px 0 0 5px;
   cursor: pointer;
   font-size: 0.9rem;
+  z-index: 99; /* ✅ lower than arrows */
 }
+
 
 
 /* ✅ Responsive Fixes */
