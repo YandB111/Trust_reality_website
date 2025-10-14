@@ -1,233 +1,223 @@
-/* 🔹 Development Section */
-.developments-section {
-    margin-top: 60px;
-    position: relative;
-    /* so arrows can be placed relative to this */
-    padding: 100px;
-}
-
-.developments-header {
-    display: flex;
-    justify-content: flex-start;
-    /* align title to left */
-    align-items: center;
-    margin-bottom: 40px;
-    position: relative;
-    color: #7a624a;
-}
-
-/* Title styling */
-.section-subtitle {
-    font-size: 14px;
-    font-weight: bold;
-    color: #666;
-}
-
-.section-title {
-    font-size: 28px;
-    font-weight: bold;
-    margin: 5px 0 0;
-}
-
-.residential-section {
-    margin-top: 60px;
-    position: relative;
-    /* so arrows can be placed relative to this */
-    padding: 100px;
-}
-.residential-section {
-  margin-top: 60px;
-  padding: 50px;
-  position: relative;
-}
-
-.residential-header {
+/* ==============================
+   🔹 Modal
+============================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  z-index: 1000;
 }
 
-.residential-title {
-  font-size: 26px;
-  font-weight: bold;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
+.modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  text-align: center;
 }
 
-/* Residential label */
-.residential-label {
-  font-size: 22px;        /* smaller than main text */
-  font-weight: 600;
-  color: #7a624a;         /* brownish shade */
-  margin-right: 8px;
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
 }
 
-/* Skylines description */
-.residential-subtitle {
-  font-size: 24px;
-  font-weight: 500;
-  color: #000;            /* black */
+.modal-media {
+  max-width: 100%;
+  max-height: 60vh;
+  margin-bottom: 10px;
 }
 
-
-/* 🔹 Cards */
-.development-card {
-    padding: 15px;
-    text-align: center;
-}
-
-.development-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.development-card h3 {
-    margin: 10px 0 5px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.development-card p {
-    font-size: 14px;
-    color: #666;
-}
+/* ==============================
+   🔹 Common Section Styling
+============================== */
+.landmark-section,
+.residential-section,
 .commercial-section {
   margin-top: 60px;
- 
+  position: relative;
+  padding: 60px 100px;
 }
 
+.landmark-header,
+.residential-header,
 .commercial-header {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+  color: #7a624a;
 }
 
+/* Shared heading pattern */
+.landmark-title,
+.residential-title,
 .commercial-title {
   font-size: 26px;
   font-weight: bold;
-  margin: 0;
-  
-  align-items: baseline;
-  gap: 8px; /* space between label and subtitle */
+  margin: 5px 0 0;
+  color: #000;
 }
 
-/* Commercial label (brown) */
+.landmark-label,
+.residential-label,
 .commercial-label {
-  font-size: 24px; 
+  font-size: 22px;
   font-weight: 600;
-  color: #7a624a; /* brown shade */
+  color: #7a624a;
+  margin-right: 8px;
 }
 
-/* Subtitle (smaller + black) */
+.landmark-subtitle,
+.residential-subtitle,
 .commercial-subtitle {
-  font-size: 18px; /* smaller than label */
+  font-size: 18px;
   font-weight: 500;
-  color: #000;     /* black */
+  color: #000;
 }
 
-/* 🔹 Custom Slider Arrows */
+/* ==============================
+   🔹 Development Cards
+============================== */
+.development-card {
+  padding: 10px;
+  text-align: center;
+  max-width: 360px;
+  margin: auto;
+}
+
+.development-card img,
+.development-video {
+  width: 100%;
+  height: 260px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.development-video {
+  outline: none;
+}
+
+.development-card img:hover,
+.development-video:hover {
+  transform: scale(1.02);
+}
+
+.development-card h3 {
+  margin: 12px 0 4px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.development-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+/* ==============================
+   🔹 Custom Slider Arrows
+============================== */
 .custom-arrow {
-    position: absolute;
-    top: -10px;
-    /* place above cards, near title */
-    transform: none;
-    /* remove vertical centering */
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #000;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-}
-
-.custom-arrow span {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000;
-}
-
-.custom-arrow:hover {
-    background: #000;
-    border-color: #000;
-}
-
-.custom-arrow:hover span {
-    color: #fff;
-}
-
-/* Align both arrows top-left */
-.custom-arrow.prev {
-    left: 0;
-    /* stick to left */
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
 }
 
 .custom-arrow.next {
-    left: 50px;
-    /* place next arrow beside prev */
+  left: 50px;
 }
-/* 🔹 Responsive Fixes */
+
+.custom-arrow span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.custom-arrow:hover {
+  background: #000;
+}
+
+.custom-arrow:hover span {
+  color: #fff;
+}
+
+/* ==============================
+   🔹 Responsive
+============================== */
+@media (max-width: 1024px) {
+  .landmark-section,
+  .residential-section,
+  .commercial-section {
+    padding: 40px;
+  }
+}
+
 @media (max-width: 768px) {
-    /* Arrows */
-    .custom-arrow {
-        width: 32px;
-        height: 32px;
-    }
+  .landmark-section,
+  .residential-section,
+  .commercial-section {
+    padding: 20px;
+  }
 
-    .custom-arrow span {
-        font-size: 14px;
-    }
+  .custom-arrow {
+    top: -40px;
+    width: 30px;
+    height: 30px;
+  }
 
-    .custom-arrow.next {
-        left: 40px;
-    }
+  .custom-arrow span {
+    font-size: 14px;
+  }
 
-    /* Sections */
-    .developments-section,
-    .residential-section,
-    .commercial-section {
-        margin-top: 40px;
-        position: relative;
-        padding: 0px; /* reduce padding for small screens */
-    }
+  .development-card img,
+  .development-video {
+    height: 220px;
+  }
 
-    /* Titles */
-    .section-title,
-    .residential-title,
-    .commercial-title {
-        font-size: 22px;
-        flex-wrap: wrap; /* break into new lines if too long */
-    }
+  .development-card h3 {
+    font-size: 16px;
+  }
 
-    /* Subtitles + Labels */
-    .section-subtitle,
-    .residential-label,
-    .commercial-label {
-        font-size: 16px;
-    }
+  .development-card p {
+    font-size: 13px;
+  }
 
-    .residential-subtitle,
-    .commercial-subtitle {
-        font-size: 14px;
-    }
+  .landmark-label,
+  .residential-label,
+  .commercial-label {
+    font-size: 20px;
+  }
 
-    /* Cards */
-    .development-card {
-        padding: 10px;
-    }
-
-    .development-card h3 {
-        font-size: 16px;
-    }
-
-    .development-card p {
-        font-size: 12px;
-    }
+  .landmark-subtitle,
+  .residential-subtitle,
+  .commercial-subtitle {
+    font-size: 15px;
+  }
 }

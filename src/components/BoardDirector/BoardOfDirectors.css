@@ -53,14 +53,18 @@
 
 .board-of-directors {
   text-align: center;
-  margin: 2rem auto;
-  max-width: 1200px;
-  padding: 1rem;
+  margin: 3rem auto;
+  padding: 2rem;
+  width: 100%;
+  max-width: 100%; /* Remove hard limit */
+  background-color: #fdfdfd;
+  box-sizing: border-box;
 }
 
+/* Heading spacing */
 .board-of-directors h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
 }
 
 .director-card,
@@ -71,14 +75,14 @@
 
 /* Slider Wrapper */
 .slider-wrapper {
-  position: relative; /* important for arrow positioning */
+  position: relative;
   width: 100%;
-  max-width: 1000px;
-  margin: auto;
+  padding: 0 3rem; /* Add side padding */
+  max-width: 1600px; /* Optional: larger than before */
+  margin: 0 auto;
   overflow: hidden;
-  z-index: 10; /* ✅ keep slider elements above base but not global navbar */
+  z-index: 10;
 }
-
 /* Track */
 .directors-track {
   display: flex;

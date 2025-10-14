@@ -50,7 +50,7 @@ const About = ({ hideButton = false }) => {
         <div className="about-right">
           <div className="about-stats-grid">
             <div className="stat-box">
-              <AnimatedNumber target={38} duration={3000} />
+              <AnimatedNumber target={16} duration={3000} />
               <p>Years of Excellence</p>
             </div>
             <div className="stat-box">
@@ -59,7 +59,7 @@ const About = ({ hideButton = false }) => {
             </div>
             <div className="stat-box">
               <AnimatedNumber target={180} duration={3000} />
-              <p>Mn. Sq. Ft. Delivered</p>
+              <p>Mn. Sq. Ft. lease</p>
             </div>
             <div className="stat-box">
               <AnimatedNumber target={170} duration={3000} />

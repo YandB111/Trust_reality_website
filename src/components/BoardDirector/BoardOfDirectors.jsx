@@ -31,8 +31,8 @@ const directors = [
 const BoardOfDirectors = () => {
   const [index, setIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [lightboxImage, setLightboxImage] = useState(null); // 🔥 for lightbox
 
-  // Adjust items per page for responsive layout
   useEffect(() => {
     const updateItemsPerPage = () => {
       setItemsPerPage(window.innerWidth <= 760 ? 1 : 3);
@@ -42,13 +42,20 @@ const BoardOfDirectors = () => {
     return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
-  // Circular slider navigation
   const prevSlide = () => {
     setIndex((prev) => (prev === 0 ? directors.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
     setIndex((prev) => (prev === directors.length - 1 ? 0 : prev + 1));
+  };
+
+  const openLightbox = (img) => {
+    setLightboxImage(img);
+  };
+
+  const closeLightbox = () => {
+    setLightboxImage(null);
   };
 
   return (
@@ -71,7 +78,10 @@ const BoardOfDirectors = () => {
         >
           {directors.map((director, i) => (
             <div className="director-card" key={i}>
-              <div className="image-wrapper">
+              <div
+                className="image-wrapper"
+                onClick={() => openLightbox(director.img)}
+              >
                 <img src={director.img} alt={director.name} />
               </div>
               <h3>{director.name}</h3>
@@ -84,6 +94,21 @@ const BoardOfDirectors = () => {
           &#8594;
         </button>
       </div>
+
+      {/* ✅ Lightbox Overlay */}
+      {lightboxImage && (
+        <div className="lightbox" onClick={closeLightbox}>
+          <div
+            className="lightbox-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="lightbox-close-btn" onClick={closeLightbox}>
+              &times;
+            </button>
+            <img src={lightboxImage} alt="Zoomed In" />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

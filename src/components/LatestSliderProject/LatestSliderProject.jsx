@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./LatestSliderProject.css";
 import project1 from "../../assets/projects/project1.jpeg";
+import project3 from "../../assets/projects/project3.jpg";
 import project2 from "../../assets/projects/project2.jpeg";
 const slides = [
   {
@@ -23,7 +24,7 @@ const slides = [
     size: "Size: 120–250 sq. yds ",
     price: "₹8,00,000 per sq. yd",
     Phone: " 8054761832",
-    img: project2,
+    img: project3,
     link: "/about-us",
   },
   {
@@ -34,7 +35,7 @@ const slides = [
     size: "1,000 premium plots ",
     price: "Just ₹55 Lakhs onwards",
     Phone: "8054761832",
-    img: "Image",
+    img: project2,
     link: "/about-us",
   },
 ];
