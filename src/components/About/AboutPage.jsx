@@ -18,9 +18,10 @@ import residential2 from "../../assets/residential/residential2.jpg";
 import residential3 from "../../assets/residential/residential3.jpg";
 import goodrej from "../../assets/residential/goodrej.mp4";
 
-import commercial1 from "../../assets/commercial/landmark.jpg";
-import commercial2 from "../../assets/commercial/landmark.jpg";
-import commercial3 from "../../assets/commercial/landmark.jpg";
+import commercial1 from "../../assets/commercial/Godrej1.jpeg";
+import commercial2 from "../../assets/commercial/DLF.png";
+import commercial3 from "../../assets/commercial/AdaniReality.png";
+import commercial4 from "../../assets/commercial/DLF1.png";
 
 // Custom Arrow Components
 const PrevArrow = ({ onClick }) => (
@@ -34,24 +35,24 @@ const NextArrow = ({ onClick }) => (
   </div>
 );
 
-// Data
-const landmarkDevelopments = [
-  {
-    image: landmarkImg1,
-    title: "Landmark Investment in Uttarakhand!",
-    subtitle: "Limited Opportunity – Own your dream space in Dev Bhoomi!",
-  },
-  {
-    image: landmarkImg2,
-    title: "Prestige Landmark Heights, Dehradun",
-    subtitle: "Premium hill-view apartments",
-  },
-  {
-    image: landmarkImg3,
-    title: "Nature Valley Enclave",
-    subtitle: "Luxury plots surrounded by nature",
-  },
-];
+// // Data
+// const landmarkDevelopments = [
+//   {
+//     image: landmarkImg1,
+//     title: "Landmark Investment in Uttarakhand!",
+//     subtitle: "Limited Opportunity – Own your dream space in Dev Bhoomi!",
+//   },
+//   {
+//     image: landmarkImg2,
+//     title: "Prestige Landmark Heights, Dehradun",
+//     subtitle: "Premium hill-view apartments",
+//   },
+//   {
+//     image: landmarkImg3,
+//     title: "Nature Valley Enclave",
+//     subtitle: "Luxury plots surrounded by nature",
+//   },
+// ];
 
 const residentialDevelopments = [
   {
@@ -79,18 +80,23 @@ const residentialDevelopments = [
 const commercialDevelopments = [
   {
     image: commercial1,
-    title: "Trust Square Business Hub",
-    subtitle: "Office & retail space for modern businesses",
+    title: "Godrej Aristocrat",
+    subtitle: "Luxury Redefined at Sector 49, Golf Course Extension Road ",
   },
   {
     image: commercial2,
-    title: "Adani Corporate Plaza",
-    subtitle: "Basement + Ground + 4 Floors (DTCP Approved)",
+    title: "DLF MidTown",
+    subtitle: "Prceision & Care in Every Detail",
   },
   {
     image: commercial3,
-    title: "Brahma Tech Park",
-    subtitle: "Grade-A corporate offices in Gurgaon",
+    title: "Adani Reality",
+    subtitle: "10 Projects 4.5 million sq. ft.",
+  },
+   {
+    image: commercial4,
+    title: "DLF MidTowne",
+    subtitle:  "Prceision & Care in Every Detail",
   },
 ];
 
@@ -136,17 +142,17 @@ const AboutPage = () => {
         <Timeline />
 
         {/* 🔹 Landmark Section */}
-        <section className="landmark-section">
+        {/* <section className="landmark-section">
           <div className="landmark-header">
             <h5 className="landmark-title">
               <span className="landmark-label">Landmark | </span>
               <span className="landmark-subtitle">
-                Don’t Just Buy Land – Own a Landmark! Limited Opportunity – Own your dream space in Dev Bhoomi!
+                Don’t Just Buy Land – Own a Landmark! Ldimited Opportunity – Own your dream space in Dev Bhoomi!
               </span>
             </h5>
           </div>
           <Slider {...settings}>{landmarkDevelopments.map(renderSlide)}</Slider>
-        </section>
+        </section> */}
 
         {/* 🔹 Residential Section */}
         <section className="residential-section">
